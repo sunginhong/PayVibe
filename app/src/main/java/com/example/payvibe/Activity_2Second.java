@@ -20,6 +20,7 @@ public class Activity_2Second extends Activity {
     private static final int cnt = 50;
     int count = cnt;
     int cntF = cnt;
+
     private static final int MILLISINFUTURE = cnt*1000;
     private static final int COUNT_DOWN_INTERVAL = 1000;
     LottieAnimationView lottieview;
