@@ -14,23 +14,42 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn1 = (Button) findViewById(R.id.btn1);
         Button btn2 = (Button) findViewById(R.id.btn2);
+        Button btn3 = (Button) findViewById(R.id.btn3);
+        Button btn4 = (Button) findViewById(R.id.btn4);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(getApplicationContext(), Activity_Set_1Default.class);
+                Intent intent1 = new Intent(getApplicationContext(), Activity_Sel.class);
                 startActivity(intent1);
             }
         });
-
 
         btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(getApplicationContext(), Activity_Set_2Anim.class);
+                Intent intent2 = new Intent(getApplicationContext(), Activity_Payments_SPay.class);
                 startActivity(intent2);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getApplicationContext(), Activity_Payments_NPay.class);
+                startActivity(intent3);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent4 = new Intent(getApplicationContext(), Activity_Payments_SPay_Fade.class);
+                startActivity(intent4);
             }
         });
 

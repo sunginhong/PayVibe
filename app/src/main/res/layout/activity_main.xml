@@ -31,8 +31,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:background="#1F3FFF"
-                android:text="1. 앱 아이콘 애니메이션 X"/>
+                android:textColor="#000"
+                android:background="#CBD1D7"
+                android:text="1. 현장결제 MST 결제 애니메이션"/>
 
             <Button
                 android:id="@+id/btn2"
@@ -40,9 +41,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:padding="10dp"
-                android:background="#1F3FFF"
-                android:text="2. 앱 아이콘 애니메이션 O"/>
+                android:textColor="#000"
+                android:background="#CBD1D7"
+                android:text="2-A. 삼성페이 결제 로딩 애니메이션"/>
 
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:background="#CBD1D7"
+                android:text="2-B. 네이버페이 결제 로딩 애니메이션"/>
+
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:background="#CBD1D7"
+                android:text="2-A. 삼성페이 결제 로딩 애니메이션(페이드)"/>
         </LinearLayout>
 
 </FrameLayout>

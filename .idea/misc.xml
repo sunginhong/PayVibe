@@ -8,6 +8,11 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/frag_pager.xml" value="0.25253292806484295" />
         <entry key="app/src/main/res/layout/frag_pager_cus.xml" value="0.28489583333333335" />
+        <entry key="app/src/main/res/layout/frag_payment.xml" value="0.5182291666666666" />
+        <entry key="app/src/main/res/layout/frag_payment_npay.xml" value="0.28489583333333335" />
+        <entry key="app/src/main/res/layout/frag_payment_npay2.xml" value="0.29393115942028986" />
+        <entry key="app/src/main/res/layout/frag_payment_spay.xml" value="0.29393115942028986" />
+        <entry key="app/src/main/res/layout/frag_payment_spay2.xml" value="0.1734375" />
       </map>
     </option>
   </component>
