@@ -54,6 +54,9 @@ public class Activity_Payments_NPay_Pos extends Activity {
 
         Utils_Anim.AlphaAnim(lottieview_payments, 0, 0, 0);
 
+        vibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
+        vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK);
+
 //        Utils_Anim.SclaeAnimCusEase(payment_card_fl, scaleN, scaleN, scaleN, scaleN, 0.5f, 0.5f, 0, Utils_Anim.interpolator_easeOut );
 //        Utils_Anim.SclaeAnimCusEase(paycard_parents_origin, 1, 1, 1, 1, 0.5f, 0.5f, 0, Utils_Anim.interpolator_easeOut );
 
@@ -97,6 +100,7 @@ public class Activity_Payments_NPay_Pos extends Activity {
             public void onClick(View v) {
                 if (!start){
                     start = true;
+                    conainll.performHapticFeedback(HapticFeedbackConstants.CONFIRM);
                     Utils_Anim.function_containYAnim(paycard_parents_fl, 0, -(421-85), 300, Utils_Anim.interpolator_easeOut);
 //                    Utils_Anim.SclaeAnimCusEase(payment_card_fl, scaleN, 1, scaleN, 1, 0.5f, 0.5f, 400, Utils_Anim.interpolator_easeOut );
                     Utils_Anim.SclaeAnimCusEase(paycard_parents_origin, 1, scaleN2, 1, scaleN2, 0.5f, 0.5f, 300, Utils_Anim.interpolator_easeOut );
