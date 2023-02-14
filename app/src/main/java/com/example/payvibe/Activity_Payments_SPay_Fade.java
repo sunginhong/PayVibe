@@ -1,6 +1,7 @@
 package com.example.payvibe;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.VibrationEffect;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 
 public class Activity_Payments_SPay_Fade extends Activity {
 
+    private Activity mActivity;
     private boolean start = false;
     FrameLayout lottieview_payments_group;
     LottieAnimationView pay_anim_1loop;
@@ -29,6 +31,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frag_payment_spay2);
+        mActivity = this;
 
         LinearLayout conainll = (LinearLayout) findViewById(R.id.conainll);
         Button btn_play = (Button) findViewById(R.id.btn_play);
@@ -58,7 +61,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
         lottieview_payments_group.bringToFront();
         Utils_Anim.AlphaAnim(lottieview_payments_f, 0, 0, 0);
 
-        Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 52, 52, 0, 0, 0);
+        Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 104/3, 0, 0, 0);
 
         Runnable runnable = new Runnable() {
             public void run() {
@@ -72,7 +75,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
 
         Runnable runnable2 = new Runnable() {
             public void run() {
-                Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 52, 0, 0, 1, 400);
+                Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 0, 0, 1, 300);
             }
         };
 
@@ -92,14 +95,16 @@ public class Activity_Payments_SPay_Fade extends Activity {
                     setTimeOut.postDelayed(runnable, 100);
                     setTimeOut2.postDelayed(runnable2, 200);
                 } else {
-                    start = false;
-                    Utils_Anim.AlphaAnim(pannel_ui, 0, 1, 100);
-                    Utils_Anim.AlphaAnim(pannel_ui2, 0, 1, 100);
-                    pay_anim_1loop.playAnimation();
-                    setTimeOut.removeCallbacks(runnable);
-                    setTimeOut2.removeCallbacks(runnable2);
-                    Utils_Anim.AlphaAnim(lottieview_payments_f, 0, 0, 0);
-                    Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 52, 52, 0, 0, 0);
+                    if (Build.VERSION.SDK_INT >= 11) {
+                        mActivity.recreate();
+                    } else {
+                        mActivity.finish();
+                        mActivity.startActivity(mActivity.getIntent());
+                    }
+                    pay_anim_1loop.setFrame(0);
+                    pay_anim_1loop.pauseAnimation();
+                    lottieview_payments_f.setFrame(0);
+                    lottieview_payments_f.pauseAnimation();
                 }
             }
         });

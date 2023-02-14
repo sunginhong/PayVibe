@@ -43,7 +43,7 @@
                 android:padding="10dp"
                 android:textColor="#000"
                 android:background="#CBD1D7"
-                android:text="2-A. 삼성페이 결제 로딩 애니메이션"/>
+                android:text="2-A. 삼성페이 결제 로딩 애니메이션(포지션)"/>
 
             <Button
                 android:id="@+id/btn3"
@@ -53,7 +53,7 @@
                 android:padding="10dp"
                 android:textColor="#000"
                 android:background="#CBD1D7"
-                android:text="2-B. 네이버페이 결제 로딩 애니메이션"/>
+                android:text="2-B. 네이버페이 결제 로딩 애니메이션(포지션)"/>
 
             <Button
                 android:id="@+id/btn4"
@@ -64,6 +64,16 @@
                 android:textColor="#000"
                 android:background="#CBD1D7"
                 android:text="2-A. 삼성페이 결제 로딩 애니메이션(페이드)"/>
+
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:background="#CBD1D7"
+                android:text="2-A. 네이버페이 결제 로딩 애니메이션(페이드)"/>
         </LinearLayout>
 
 </FrameLayout>

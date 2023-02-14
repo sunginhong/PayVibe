@@ -36,6 +36,7 @@
         <activity android:name=".Activity_Set_2Anim"/>
         <activity android:name=".Activity_Sel"/>
         <activity android:name=".Activity_Payments_SPay"/>
+        <activity android:name=".Activity_Payments_NPay_Pos"/>
         <activity android:name=".Activity_Payments_SPay_Fade"/>
         <activity android:name=".Activity_Payments_NPay"/>
     </application>

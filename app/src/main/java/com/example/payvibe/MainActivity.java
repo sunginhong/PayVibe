@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn2 = (Button) findViewById(R.id.btn2);
         Button btn3 = (Button) findViewById(R.id.btn3);
         Button btn4 = (Button) findViewById(R.id.btn4);
+        Button btn5 = (Button) findViewById(R.id.btn5);
 
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(getApplicationContext(), Activity_Payments_NPay.class);
+                Intent intent3 = new Intent(getApplicationContext(), Activity_Payments_NPay_Pos.class);
                 startActivity(intent3);
             }
         });
@@ -53,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn5.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent5 = new Intent(getApplicationContext(), Activity_Payments_NPay.class);
+                startActivity(intent5);
+            }
+        });
     }
 
 }

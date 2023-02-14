@@ -15,6 +15,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
 import androidx.compose.animation.core.CubicBezierEasing;
 import androidx.core.view.animation.PathInterpolatorCompat;
@@ -217,6 +218,17 @@ public class Utils_Anim {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(objectAnimator1, objectAnimator2);
         animatorSet.setDuration(0);
+
+        animatorSet.start();
+    }
+
+    public static void function_scaleAnimDuration(View view, float n, int dutation){
+        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(view, "scaleX", n);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(view, "scaleY", n);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(objectAnimator1, objectAnimator2);
+        animatorSet.setDuration(dutation);
 
         animatorSet.start();
     }

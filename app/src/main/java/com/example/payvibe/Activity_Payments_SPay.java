@@ -1,6 +1,7 @@
 package com.example.payvibe;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.VibrationEffect;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 
 public class Activity_Payments_SPay extends Activity {
 
+    private Activity mActivity;
     private boolean start = false;
     FrameLayout lottieview_payments_group;
     LottieAnimationView pay_anim_1loop;
@@ -29,6 +31,7 @@ public class Activity_Payments_SPay extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frag_payment_spay);
+        mActivity = this;
 
         LinearLayout conainll = (LinearLayout) findViewById(R.id.conainll);
         Button btn_play = (Button) findViewById(R.id.btn_play);
@@ -84,15 +87,14 @@ public class Activity_Payments_SPay extends Activity {
                     setTimeOut.postDelayed(runnable, 300);
 
                 } else {
-                    start = false;
-                    pay_anim_1loop.setVisibility(View.VISIBLE);;
+                    if (Build.VERSION.SDK_INT >= 11) {
+                        mActivity.recreate();
+                    } else {
+                        mActivity.finish();
+                        mActivity.startActivity(mActivity.getIntent());
+                    }
+                    lottieview_payments.setFrame(0);
                     lottieview_payments.pauseAnimation();
-                    Utils_Anim.AlphaAnim(pannel_ui, 0, 1, 0);
-                    Utils_Anim.AlphaAnim(countView, 0, 1, 0);
-                    Utils_Anim.AlphaAnim(panel_spaysample_title, 1, 0, 0);
-                    Utils_Anim.AlphaAnim(lottieview_payments, 1, 0, 0);
-                    Utils_Anim.TransAnim(lottieview_payments_group, 0, 0, 150, 0, 0);
-                    setTimeOut.removeCallbacks(runnable);
                 }
             }
         });
