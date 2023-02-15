@@ -40,6 +40,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
         ImageView panel_spaysample_title = (ImageView) findViewById(R.id.pannel_ui_sample);
         TextView countView = (TextView) findViewById(R.id.countView);
         lottieview_payments_group = (FrameLayout) findViewById(R.id.lottieview_payments_group);
+        FrameLayout pannel_ui_sample_group = (FrameLayout) findViewById(R.id.pannel_ui_sample_group);
 
         vibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK);
@@ -61,7 +62,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
         lottieview_payments_group.bringToFront();
         Utils_Anim.AlphaAnim(lottieview_payments_f, 0, 0, 0);
 
-        Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 104/3, 0, 0, 0);
+        Utils_Anim.TransAlphaAnim(pannel_ui_sample_group, 0, 0, 104/2, 104/2, 0, 0, 0);
 
         Runnable runnable = new Runnable() {
             public void run() {
@@ -75,7 +76,7 @@ public class Activity_Payments_SPay_Fade extends Activity {
 
         Runnable runnable2 = new Runnable() {
             public void run() {
-                Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 0, 0, 1, 300);
+                Utils_Anim.TransAlphaAnim(pannel_ui_sample_group, 0, 0, 104/2, 0, 0, 1, 300);
             }
         };
 

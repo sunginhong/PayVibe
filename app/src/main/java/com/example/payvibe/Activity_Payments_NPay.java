@@ -34,13 +34,13 @@ public class Activity_Payments_NPay extends Activity {
         LinearLayout conainll = (LinearLayout) findViewById(R.id.conainll);
         ImageView panel_spaysample_title = (ImageView) findViewById(R.id.pannel_ui_sample);
         Button btn_play = (Button) findViewById(R.id.btn_play);
-        pannel_ui_contain = (FrameLayout) findViewById(R.id.pannel_ui_contain);
+//        pannel_ui_contain = (FrameLayout) findViewById(R.id.pannel_ui_contain);
         ImageView pannel_ui = (ImageView) findViewById(R.id.pannel_ui);
-        lottieview_end = (LottieAnimationView) findViewById(R.id.lottieview_end);
-        lottieview_end.setAnimation("payment-npay.json");
-        Utils_Anim.AlphaAnim(lottieview_end, 0, 0, 0);
+        lottieview_end = (LottieAnimationView) findViewById(R.id.lottieview_payments_f);
+        lottieview_end.setAnimation("payment-npay_fade.json");
+        FrameLayout pannel_ui_sample_group = (FrameLayout) findViewById(R.id.pannel_ui_sample_group);
 
-//        Utils_Anim.TransAlphaAnim(pannel_ui_contain, 0, 0, 52, 52, 0, 0, 0);
+        Utils_Anim.AlphaAnim(lottieview_end, 0, 0, 0);
 
         vibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK);
@@ -53,7 +53,7 @@ public class Activity_Payments_NPay extends Activity {
                 .load(R.drawable.panel_spaysample_title)
                 .into(panel_spaysample_title);
 
-        Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 104/3, 0, 0, 0);
+        Utils_Anim.TransAlphaAnim(pannel_ui_sample_group, 0, 0, 104/2, 104/2, 0, 0, 0);
 
         Runnable runnable = new Runnable() {
             public void run() {
@@ -67,7 +67,7 @@ public class Activity_Payments_NPay extends Activity {
 
         Runnable runnable2 = new Runnable() {
             public void run() {
-                Utils_Anim.TransAlphaAnim(panel_spaysample_title, 0, 0, 104/3, 0, 0, 1, 300);
+                Utils_Anim.TransAlphaAnim(pannel_ui_sample_group, 0, 0, 104/2, 0, 0, 1, 300);
             }
         };
 
