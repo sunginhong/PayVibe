@@ -45,6 +45,7 @@ public class Activity_Payments_NPay extends Activity {
         vibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK);
 
+
         Glide.with(this)
                 .load(R.drawable.qr_view_f)
                 .into(pannel_ui);
